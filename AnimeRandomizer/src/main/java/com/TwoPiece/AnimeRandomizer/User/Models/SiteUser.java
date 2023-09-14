@@ -1,6 +1,7 @@
-package com.TwoPiece.AnimeRandomizer.User;
+package com.TwoPiece.AnimeRandomizer.User.Models;
 
-import com.TwoPiece.AnimeRandomizer.Anime.Anime;
+import com.TwoPiece.AnimeRandomizer.Anime.Models.Anime;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -24,16 +25,23 @@ public class SiteUser {
     private String email;
     @Column(name = "password")
     private String password;
-    @ElementCollection
-    @CollectionTable
-    @Column(name = "userAnimeList")
-    private List<Integer> userAnimeList = new ArrayList<>(List.of());
+    @JsonIgnore
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_anime",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "anime_id")
+    )
+    private List<Anime> userAnimeList;
     @Id
     @Column(name="U_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long U_id;
+    @Column
+    private int id;
 
-    public SiteUser(String username, String email, String password) {
+    public SiteUser(int id, String username, String email, String password) {
+        this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -67,22 +75,20 @@ public class SiteUser {
         this.password = password;
     }
 
-    public List<Integer> getUserAnimeList() {
+    public List<Anime> getUserAnimeList() {
         return userAnimeList;
     }
 
     public void addAnime(Anime anime) {
-        userAnimeList.add(anime.getMalId());
-    }
-    public void addUser(SiteUser user) {
-
+        userAnimeList.add(anime);
     }
 
-    public void setId(Long id) {
-        this.U_id = id;
+
+    public int getId() {
+        return id;
     }
 
-    public Long getId() {
+    public Long getU_id() {
         return U_id;
     }
 }
