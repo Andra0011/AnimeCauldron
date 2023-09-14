@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        "crunchyroll-orange" : "#F47521",
+        "funimation-purple" : "#472d8e"
+      }
+    },
   },
   plugins: [],
 }
