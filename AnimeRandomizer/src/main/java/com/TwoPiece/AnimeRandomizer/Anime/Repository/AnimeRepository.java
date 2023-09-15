@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface AnimeRepository extends JpaRepository<Anime, Integer> {
-    @Query("SELECT a FROM Anime a WHERE a.id = ?1")
+    @Query("SELECT a FROM Anime a WHERE a.mal_Id = ?1")
     Optional<Anime> findAnimeByMal_Id(int id);
 }

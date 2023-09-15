@@ -1,5 +1,7 @@
 package com.TwoPiece.AnimeRandomizer.User.Service;
 
+import com.TwoPiece.AnimeRandomizer.User.Error.NotFoundUserException;
+import com.TwoPiece.AnimeRandomizer.User.Models.Login;
 import com.TwoPiece.AnimeRandomizer.User.Repository.UserRepository;
 import com.TwoPiece.AnimeRandomizer.User.Models.SiteUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,15 @@ public class UserService {
     }
     public Optional<SiteUser> getUserByEmail(String email) {
         return userRepository.findSiteUserByEmail(email);
+    }
+
+    public SiteUser login(Login login) {
+        SiteUser userByEmail = userRepository.findSiteUserByEmail(login.getEmail()).orElseThrow(NotFoundUserException::new);
+        if (userByEmail.getPassword().equals(login.getPassword())) {
+            return userByEmail;
+        } else {
+            throw new IllegalStateException("Email or Password is incorrect");
+        }
     }
 
     public void addUser(SiteUser user) {

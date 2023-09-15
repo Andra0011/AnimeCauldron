@@ -2,6 +2,7 @@ package com.TwoPiece.AnimeRandomizer.User.Controller;
 
 import com.TwoPiece.AnimeRandomizer.User.Error.NotFoundUserException;
 import com.TwoPiece.AnimeRandomizer.User.Models.EntityRequestDTO;
+import com.TwoPiece.AnimeRandomizer.User.Models.Login;
 import com.TwoPiece.AnimeRandomizer.User.Models.SiteUser;
 import com.TwoPiece.AnimeRandomizer.User.Service.UserService;
 import jakarta.persistence.FetchType;
@@ -20,12 +21,18 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
+
     @GetMapping("/{id}")
     public SiteUser getUserDetails(@PathVariable int id) {
         return userService.getUserById(id).orElseThrow(NotFoundUserException::new);
     }
 
-    @PostMapping
+    @GetMapping("/login")
+    public SiteUser logIn(@RequestBody Login login) {
+        return userService.login(login);
+    }
+
+    @PostMapping("/register")
     public String addUser(@RequestBody SiteUser user) {
         userService.addUser(user);
         return "Done";
@@ -53,9 +60,10 @@ public class UserController {
         return "Done";
     }
 
+
     @DeleteMapping("/{id}")
     public String deleteUser(@PathVariable int id) {
-            userService.deleteUser(id);
-            return "Done";
+        userService.deleteUser(id);
+        return "Done";
     }
 }
