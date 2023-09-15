@@ -38,11 +38,6 @@ public class UserController {
         return "Done";
     }
 
-//    @PostMapping("/register")
-//    public String registerUser(@ModelAttribute("user") SiteUser user) {
-//        userService.registerUser(user);
-//    }
-
     @PutMapping("/{id}")
     public String updateUser(@PathVariable int id, @RequestBody EntityRequestDTO requestDTO) {
         Optional<SiteUser> optionalSiteUser = userService.getUserById(id);

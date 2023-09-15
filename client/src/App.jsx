@@ -15,7 +15,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="border-10 border-crunchyroll-orange rounded bg-white">
-        <div>
+        <div className="h-1000">
           Get Anime
           <input
             type="number"
