@@ -33,7 +33,7 @@ const RegisterForm = () => {
     return (
         <div className=" relative flex h-screen w-full items-center justify-center p-4 align-middle">
             <h1 className="absolute top-64 text-3xl">CREATE AN ACCOUNT</h1>
-            <div className="h-25vh w-25vw border-crunchyroll-orange flex flex-wrap border-4">
+            <div className="h-35vh w-25vw border-crunchyroll-orange flex flex-wrap border-4">
                 <img
                     src="./Images/anime-cauldron-logo.webp"
                     className="left-90 absolute top-10 max-w-sm"
