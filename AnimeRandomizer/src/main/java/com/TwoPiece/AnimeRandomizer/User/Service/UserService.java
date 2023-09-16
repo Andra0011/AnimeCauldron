@@ -17,8 +17,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public Optional<SiteUser> getUserById(int id) {
-        return userRepository.findSiteUserById(id);
+    public Optional<SiteUser> getUserById(Long U_id) {
+        return userRepository.findSiteUserById(U_id);
     }
     public Optional<SiteUser> getUserByEmail(String email) {
         return userRepository.findSiteUserByEmail(email);
@@ -35,7 +35,7 @@ public class UserService {
 
     public void addUser(SiteUser user) {
         boolean userByEmail = userRepository.findSiteUserByEmail(user.getEmail()).isPresent();
-        boolean userById = userRepository.findSiteUserById(user.getId()).isPresent();
+        boolean userById = userRepository.findSiteUserById(user.getU_id()).isPresent();
         if (userByEmail) {
             throw new IllegalStateException("Email is already taken");
         }
@@ -49,8 +49,8 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public void deleteUser(int id) {
-        userRepository.deleteSiteUserById(id);
+    public void deleteUser(String email) {
+        userRepository.deleteSiteUserByEmail(email);
     }
 
 //    public String registerUser(SiteUser user) {

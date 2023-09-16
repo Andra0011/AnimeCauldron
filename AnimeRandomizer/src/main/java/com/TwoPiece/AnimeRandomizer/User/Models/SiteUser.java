@@ -37,11 +37,8 @@ public class SiteUser {
     @Column(name="U_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long U_id;
-    @Column
-    private int id;
 
-    public SiteUser(int id, String username, String email, String password) {
-        this.id = id;
+    public SiteUser(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -81,11 +78,6 @@ public class SiteUser {
 
     public void addAnime(Anime anime) {
         userAnimeList.add(anime);
-    }
-
-
-    public int getId() {
-        return id;
     }
 
     public Long getU_id() {

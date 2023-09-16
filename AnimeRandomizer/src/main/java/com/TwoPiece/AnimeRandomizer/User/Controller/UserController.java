@@ -22,9 +22,9 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/{id}")
-    public SiteUser getUserDetails(@PathVariable int id) {
-        return userService.getUserById(id).orElseThrow(NotFoundUserException::new);
+    @GetMapping("/{email}")
+    public SiteUser getUserDetails(@PathVariable String email) {
+        return userService.getUserByEmail(email).orElseThrow(NotFoundUserException::new);
     }
 
     @GetMapping("/login")
@@ -38,9 +38,9 @@ public class UserController {
         return "Done";
     }
 
-    @PutMapping("/{id}")
-    public String updateUser(@PathVariable int id, @RequestBody EntityRequestDTO requestDTO) {
-        Optional<SiteUser> optionalSiteUser = userService.getUserById(id);
+    @PutMapping("/{email}")
+    public String updateUser(@PathVariable String email, @RequestBody EntityRequestDTO requestDTO) {
+        Optional<SiteUser> optionalSiteUser = userService.getUserByEmail(email);
         SiteUser user = optionalSiteUser.orElseThrow(NotFoundUserException::new);
         if (requestDTO.getChange().equals("email")) {
             if (userService.getUserByEmail(requestDTO.getChangeTo()).isPresent()) {
@@ -56,9 +56,9 @@ public class UserController {
     }
 
 
-    @DeleteMapping("/{id}")
-    public String deleteUser(@PathVariable int id) {
-        userService.deleteUser(id);
+    @DeleteMapping("/{email}")
+    public String deleteUser(@PathVariable String email) {
+        userService.deleteUser(email);
         return "Done";
     }
 }

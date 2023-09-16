@@ -12,14 +12,14 @@ import java.util.Optional;
 @Repository
 public interface UserRepository
         extends JpaRepository<SiteUser, String> {
-    @Query("SELECT s FROM SiteUser s WHERE s.id = ?1")
-    Optional<SiteUser> findSiteUserById(int id);
+    @Query("SELECT s FROM SiteUser s WHERE s.U_id = ?1")
+    Optional<SiteUser> findSiteUserById(Long U_id);
 
     @Query("SELECT s FROM SiteUser s WHERE s.email = ?1")
     Optional<SiteUser> findSiteUserByEmail(String email);
 
     @Modifying
     @Transactional
-    @Query("DELETE FROM SiteUser s WHERE s.id = ?1")
-    void deleteSiteUserById(int id);
+    @Query("DELETE FROM SiteUser s WHERE s.email = ?1")
+    void deleteSiteUserByEmail(String email);
 }
