@@ -6,9 +6,10 @@ const getAnime = (id) => {
     return axiosInstance.get(`/anime/${id}`).then((res) => res.data());
 };
 const GetAnime = ({ id }) => {
-    const { data } = useQuery({
+    const { data, refetch } = useQuery({
         queryKey: ["getAnime", id],
         queryFn: () => getAnime(id),
+        enabled: false,
     });
     return <div>{JSON.stringify(data)}</div>;
 };

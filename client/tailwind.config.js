@@ -7,6 +7,7 @@ export default {
                 "anime-background": "url(./Images/zoro_fullbkg.webp)",
                 luffy: "url(./Images/luffy_sad.webp)",
                 chopper: "url(./Images/chopper_sad.webp)",
+                "Not-Found": "url(./Images/NotFound.webp)",
             },
             borderWidth: {
                 9: "9px",
@@ -23,6 +24,7 @@ export default {
             },
             height: {
                 1000: "1000px",
+                "40vh": "40vh",
                 "35vh": "35vh",
                 "30vh": "30vh",
                 "15vh": "15vh",
@@ -37,9 +39,11 @@ export default {
                 "8vw": "8vw",
             },
             spacing: {
+                30: "7.5rem",
                 35: "8.03rem",
                 46: "11.3rem",
                 50: "13.2rem",
+                53: "15rem",
                 70: "17rem",
                 85: "21rem",
                 88: "21.7rem",
@@ -48,6 +52,7 @@ export default {
                 97: "26rem",
                 98: "27rem",
                 99: "28rem",
+                99.5: "28.5rem",
                 100: "29rem",
                 101: "29.17rem",
             },

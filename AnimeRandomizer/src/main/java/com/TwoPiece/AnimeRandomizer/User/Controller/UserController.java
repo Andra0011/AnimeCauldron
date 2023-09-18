@@ -27,7 +27,7 @@ public class UserController {
         return userService.getUserByEmail(email).orElseThrow(NotFoundUserException::new);
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public SiteUser logIn(@RequestBody Login login) {
         return userService.login(login);
     }
