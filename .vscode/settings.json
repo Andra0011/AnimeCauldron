@@ -8,5 +8,7 @@
         "**/Thumbs.db": true,
         "**/AnimeRandomizer": true
     },
-    "explorerExclude.backup": {}
+    "explorerExclude.backup": {},
+    "codetogether.virtualCursorJoin": "sharedVirtualCursor",
+    "codetogether.virtualCursorRemember": true
 }

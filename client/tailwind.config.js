@@ -69,6 +69,9 @@ export default {
             scale: {
                 flip: "-1",
             },
+            screens: {
+                xl: "1910px",
+            }
         },
     },
     plugins: [],
