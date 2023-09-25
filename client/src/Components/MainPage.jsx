@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
 
 const MainPage = () => {
-    const navigate = useNavigate();
+    const nav = useNavigate();
     return (
-        <div className="bg-crunchyroll-orange relative flex rounded">
+        <div className="bg-crunchyroll-orange relative flex rounded" onClick={() => navigate("/main")}>
             <button className=" ml-6">
                 <img
                     src="./Images/anime-cauldron-logo.webp"
                     className="relative h-16 w-52"
                 />
             </button>
-            <button className="relative pl-6 pr-6 xl:h-10 xl:w-32 xl:top-3 hover:bg-white hover:rounded">My profile</button>
-            <button className="relative pl-6 pr-6 xl:h-10 xl:w-32 xl:top-3 hover:bg-white hover:rounded">Random</button>
+            <button className="relative xl:pl-3 xl:pr-3 xl:h-10 xl:w-32 xl:top-3 hover:bg-white hover:rounded" onClick={() => nav("/login")}>My profile</button>
+            <button className="relative xl:pl-3 xl:pr-3 xl:h-10 xl:w-32 xl:top-3 xl:mr-24 hover:bg-white hover:rounded">Random</button>
             <div class="xl:ml-96 flex relative">
                 <input class="relative p-0.5 mt-5 xl:h-10 xl:w-56 xl:-top-2"></input>
                 <button class="relative inset-y-0 right-0 flex items-center pr-3 ml-3.5">
