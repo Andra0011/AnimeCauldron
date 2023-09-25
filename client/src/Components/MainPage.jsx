@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 const MainPage = () => {
     const navigate = useNavigate();
     return (
-        <div class="relative flex bg-crunchyroll-orange rounded">
-            <button class=" ml-6">
-            <img src="./Images/anime-cauldron-logo.webp" class="relative h-16 w-52" />
+        <div className="bg-crunchyroll-orange relative flex rounded">
+            <button className=" ml-6">
+                <img
+                    src="./Images/anime-cauldron-logo.webp"
+                    className="relative h-16 w-52"
+                />
             </button>
             <button className="relative pl-6 pr-6 xl:h-10 xl:w-32 xl:top-3 hover:bg-white hover:rounded">My profile</button>
             <button className="relative pl-6 pr-6 xl:h-10 xl:w-32 xl:top-3 hover:bg-white hover:rounded">Random</button>
@@ -22,6 +25,6 @@ const MainPage = () => {
             </div>
         </div>
     );
-}
+};
 
 export default MainPage;
