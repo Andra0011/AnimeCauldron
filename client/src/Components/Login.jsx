@@ -30,11 +30,12 @@ const Login = () => {
     });
     console.log(data);
     return (
-        <div className=" relative flex h-screen w-full items-center justify-center p-4 align-middle">
+        <div className=" relative flex h-full w-full items-center justify-center p-4 align-middle">
             {/* <h1 className="absolute top-44 text-3xl">SIGN-IN</h1> */}
             <img
                 src="./Images/anime-cauldron-logo.webp"
-                className="left-90 absolute top-12 max-w-sm"
+                className="left-90 absolute top-12 max-w-sm hover:cursor-pointer"
+                onClick={() => navigate("/main")}
             />
             <div className="h-30vh w-25vw border-crunchyroll-orange  left-90 absolute flex flex-wrap border-4">
                 <input
@@ -66,11 +67,11 @@ const Login = () => {
                     Login
                 </button>
             </div>
-            <p className="left-99.5 absolute bottom-56">
+            <p className="left-99.5 absolute bottom-56 text-white">
                 {/*eslint-disable-next-line react/no-unescaped-entities*/}
                 If you don't have an account,{" "}
                 <button
-                    className="hover:text-blue-600"
+                    className="hover:text-crunchyroll-orange"
                     onClick={() => navigate("/register")}
                 >
                     click here

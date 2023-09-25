@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 const MainPage = () => {
     const nav = useNavigate();
     return (
-        <div className="bg-crunchyroll-orange relative flex rounded" onClick={() => navigate("/main")}>
+        <div className="bg-crunchyroll-orange relative flex rounded">
             <button className=" ml-6">
                 <img
                     src="./Images/anime-cauldron-logo.webp"
                     className="relative h-16 w-52"
+                    onClick={() => navigate("/main")}
                 />
             </button>
             <button className="relative xl:pl-3 xl:pr-3 xl:h-10 xl:w-32 xl:top-3 hover:bg-white hover:rounded" onClick={() => nav("/login")}>My profile</button>

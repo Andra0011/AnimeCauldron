@@ -55,6 +55,7 @@ export default {
                 99.5: "28.5rem",
                 100: "29rem",
                 101: "29.17rem",
+                120: "38rem",
             },
             lineHeight: {
                 0: "0",

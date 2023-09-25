@@ -31,7 +31,7 @@ const RegisterForm = () => {
         mutationFn: () => postUser(userObj, navigate),
     });
     return (
-        <div className=" relative flex h-screen w-full items-center justify-center p-4 align-middle">
+        <div className=" relative flex h-full w-full items-center justify-center p-4 align-middle">
             <h1 className="absolute top-44 text-3xl">CREATE AN ACCOUNT</h1>
             <img
                 src="./Images/anime-cauldron-logo.webp"
