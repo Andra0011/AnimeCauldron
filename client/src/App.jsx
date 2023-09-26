@@ -6,6 +6,7 @@ import RegisterForm from "./Components/RegisterForm";
 import NotFound from "./Components/NotFound";
 import Login from "./Components/Login";
 import MainPage from "./Components/MainPage";
+import AnimeList from "./Components/AnimeList";
 
 const App = () => {
     const [queryClient] = useState(() => new QueryClient());
@@ -16,6 +17,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
                 <Route path="/" element={<Navigate replace to="/main" />} />
                 <Route path="/login" element={<Login />}></Route>
+                <Route path="/list" element={<AnimeList />}></Route>
                 <Route path="/main" element={<MainPage />}></Route>
             </Routes>
         </QueryClientProvider>
