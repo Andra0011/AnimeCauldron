@@ -31,16 +31,18 @@ const RegisterForm = () => {
         mutationFn: () => postUser(userObj, navigate),
     });
     return (
-        <div className=" relative flex h-full w-full items-center justify-center flex-col p-4 ">
-            <h1 className="absolute top-44 text-3xl text-white">CREATE AN ACCOUNT</h1>
+        <div className=" relative flex h-full w-full flex-col items-center justify-center p-4 ">
+            <h1 className="absolute top-44 text-3xl text-white">
+                CREATE AN ACCOUNT
+            </h1>
             <img
                 src="./Images/anime-cauldron-logo.webp"
                 className="absolute -top-7 max-w-sm hover:cursor-pointer"
                 onClick={() => navigate("/main")}
             />
-            <div className="h-40vh w-25vw border-crunchyroll-orange absolute flex items-center justify-center flex-col border-4">
+            <div className="h-40vh w-25vw border-crunchyroll-orange absolute flex flex-col items-center justify-center border-4">
                 <input
-                    className=" w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative border-2 p-5 m-3 text-white placeholder:text-white"
+                    className=" w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative m-3 border-2 p-5 text-white placeholder:text-white"
                     type="text"
                     name="username"
                     placeholder="Username"
@@ -50,7 +52,7 @@ const RegisterForm = () => {
                     }}
                 />
                 <input
-                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative inline border-2 p-5 m-3 text-white placeholder:text-white"
+                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative m-3 inline border-2 p-5 text-white placeholder:text-white"
                     type="text"
                     name="email"
                     placeholder="Email"
@@ -60,7 +62,7 @@ const RegisterForm = () => {
                     }}
                 />
                 <input
-                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative inline border-2 p-5 m-3 text-white placeholder:text-white"
+                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative m-3 inline border-2 p-5 text-white placeholder:text-white"
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -78,7 +80,7 @@ const RegisterForm = () => {
                     Register
                 </button>
             </div>
-            <p className="absolute text-white bottom-48">
+            <p className="absolute bottom-48 text-white">
                 If you already have an account,{" "}
                 <button
                     className="hover:text-crunchyroll-orange"

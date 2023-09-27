@@ -8,7 +8,11 @@ const AnimeList = () => {
     const nav = useNavigate();
     const [page, setPage] = useState(1); // Initialize the page state
 
-    const { data, isLoading, isError } = useQuery(['getAnime', page], () => axios.get(`https://api.jikan.moe/v4/anime?page=${page}`).then(resp => resp.data))
+    const { data, isLoading, isError } = useQuery(["getAnime", page], () =>
+        axios
+            .get(`https://api.jikan.moe/v4/anime?page=${page}`)
+            .then((resp) => resp.data)
+    );
 
     const changePage = (newPage) => {
         setPage(newPage);
@@ -23,7 +27,7 @@ const AnimeList = () => {
     }
 
     const animeList = data ? JSON.stringify(data) : "No data";
-    console.log(data)
+    console.log(data);
 
     return (
         <div className="relative h-full w-full">

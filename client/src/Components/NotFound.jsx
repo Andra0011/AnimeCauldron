@@ -3,9 +3,9 @@ import { useNavigate } from "react-router-dom";
 const NotFound = () => {
     const navigate = useNavigate();
     return (
-        <div className=" relative flex-column h-full w-full items-center justify-center p-4 overflow-hidden">
+        <div className=" flex-column relative h-full w-full items-center justify-center overflow-hidden p-4">
             <img src="./Images/NotFound.webp" className="relative top-8" />
-            <p className="relative text-white" > 
+            <p className="relative text-white">
                 {" "}
                 <button
                     className="hover:text-crunchyroll-orange"

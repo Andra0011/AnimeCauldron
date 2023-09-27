@@ -37,9 +37,9 @@ const Login = () => {
                 className="absolute top-12 max-w-sm hover:cursor-pointer"
                 onClick={() => navigate("/main")}
             />
-            <div className="h-30vh w-25vw border-crunchyroll-orange absolute flex justify-center items-center flex-col border-4">
+            <div className="h-30vh w-25vw border-crunchyroll-orange absolute flex flex-col items-center justify-center border-4">
                 <input
-                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative inline border-2 p-5 m-3 text-white placeholder:text-white"
+                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative m-3 inline border-2 p-5 text-white placeholder:text-white"
                     type="text"
                     name="email"
                     placeholder="Email"
@@ -49,7 +49,7 @@ const Login = () => {
                     }}
                 />
                 <input
-                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative inline border-2 p-5 m-3 text-white placeholder:text-white"
+                    className="w-17.5vw h-3vh bg-dark-gray border-crunchyroll-orange relative m-3 inline border-2 p-5 text-white placeholder:text-white"
                     type="password"
                     name="password"
                     placeholder="Password"
@@ -59,7 +59,7 @@ const Login = () => {
                     }}
                 />
                 <button
-                    className="h-3vh border-dark-orange w-8vw bg-crunchyroll-orange leading-0 relative inline border-4 p-5 m-3 text-center text-white"
+                    className="h-3vh border-dark-orange w-8vw bg-crunchyroll-orange leading-0 relative m-3 inline border-4 p-5 text-center text-white"
                     onClick={() => {
                         refetch();
                     }}
