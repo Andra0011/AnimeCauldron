@@ -8,7 +8,7 @@ const Toolbar = () => {
                 <img
                     src="./Images/anime-cauldron-logo.webp"
                     className="relative h-16 w-52 xl:mr-8"
-                    onClick={() => navigate("/main")}
+                    onClick={() => nav("/main")}
                 />
             </button>
             <button

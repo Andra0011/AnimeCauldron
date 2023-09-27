@@ -3,6 +3,7 @@ import Toolbar from "./Toolbar";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios"; // Import axios directly
 import { useState } from "react";
+import PageBar from "./PageBar";
 
 const AnimeList = () => {
     const nav = useNavigate();
@@ -28,28 +29,45 @@ const AnimeList = () => {
         return <div>Error fetching anime data</div>;
     }
 
-    const animeList = data ? JSON.stringify(data) : "No data";
-    console.log(data.data);
+    console.log(data);
 
     return (
-        <div className="relative h-full w-full">
+        <div className="flex h-full w-full flex-col items-center justify-center">
             <Toolbar />
-            <div className="flex grid-cols-5 grid-rows-5 inline-grid">
+            <div className="mt-4 flex items-center justify-center">
+                {" "}
+                <PageBar
+                    page={page}
+                    lastPage={data.pagination.last_visible_page}
+                    setPage={setPage}
+                />
+            </div>
+            <div className="inline-grid grid-cols-5 grid-rows-5 place-items-center">
                 {data.data.map((anime, i) => (
-                    <div
+                    <button
                         key={i}
-                        className="text-white flex flex-col justify-center items-center w-64"
+                        className="m-5 flex w-52 flex-col items-center justify-center text-white"
                     >
-                        <div className="h- border-2 border-crunchyroll-orange">
+                        <div className=" bg-crunchyroll-orange flex h-72 items-center justify-center">
                             <img
                                 src={anime.images.webp.image_url}
                                 alt={anime.title}
-                                
                             />
                         </div>
-                        <p className="text-white"> {anime.title} </p>
-                    </div>
+                        <p className="relative top-10 text-white">
+                            {" "}
+                            {anime.title}{" "}
+                        </p>
+                    </button>
                 ))}
+            </div>
+            <div className="mt-4 flex items-center justify-center">
+                {" "}
+                <PageBar
+                    page={page}
+                    lastPage={data.pagination.last_visible_page}
+                    setPage={setPage}
+                />
             </div>
         </div>
     );

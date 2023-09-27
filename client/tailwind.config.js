@@ -31,6 +31,7 @@ export default {
                 "3vh": "3vh",
             },
             width: {
+                "58vw": "58vw",
                 "50vw": "50vw",
                 "40vw": "40vw",
                 "30vw": "30vw",

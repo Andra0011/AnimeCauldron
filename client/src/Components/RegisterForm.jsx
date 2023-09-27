@@ -31,7 +31,7 @@ const RegisterForm = () => {
         mutationFn: () => postUser(userObj, navigate),
     });
     return (
-        <div className=" relative flex h-full w-full flex-col items-center justify-center p-4 ">
+        <div className=" relative flex h-screen w-full flex-col items-center justify-center p-4 ">
             <h1 className="absolute top-44 text-3xl text-white">
                 CREATE AN ACCOUNT
             </h1>

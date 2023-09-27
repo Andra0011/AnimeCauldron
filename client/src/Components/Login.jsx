@@ -30,7 +30,7 @@ const Login = () => {
     });
     console.log(data);
     return (
-        <div className=" relative flex h-full w-full items-center justify-center p-4">
+        <div className=" relative flex h-screen w-full items-center justify-center p-4 ">
             {/* <h1 className="absolute top-44 text-3xl">SIGN-IN</h1> */}
             <img
                 src="./Images/anime-cauldron-logo.webp"
