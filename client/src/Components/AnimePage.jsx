@@ -45,10 +45,14 @@ const AnimePage = () => {
     };
 
     const studios = (studio, i) => {
-        if (i === data.studios.length - 1) {
-            return studio.name;
+        if (studio) {
+            if (i === data.studios.length - 1) {
+                return studio.name;
+            } else {
+                return studio.name + ", ";
+            }
         } else {
-            return studio.name + ", ";
+            return "N/A";
         }
     };
 
@@ -69,7 +73,7 @@ const AnimePage = () => {
     };
 
     const getTrailer = (url) => {
-        console.log(data.trailer.ember_url)
+        console.log(data.trailer.ember_url);
         if (url) {
             return (
                 <iframe
@@ -104,7 +108,7 @@ const AnimePage = () => {
                         <div className="bg-crunchyroll-orange flex w-full items-center justify-center p-4">
                             <p className="text-2xl text-white">{data.title}</p>
                         </div>
-                        <div className="border-crunchyroll-orange w-32 flex-col items-center justify-center border-2">
+                        <div className="border-crunchyroll-orange p-2px w-32 flex-col items-center justify-center border-2">
                             <p className="text-crunchyroll-orange text-xl">
                                 Score
                             </p>

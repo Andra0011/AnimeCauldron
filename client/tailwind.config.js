@@ -78,6 +78,9 @@ export default {
             },
             textColor: {
                 "crunchyroll-orange": "#F47521",
+            },
+            padding: {
+                "2px": "3.6px",
             }
         },
     },
