@@ -11,14 +11,16 @@ const Toolbar = () => {
         isError2,
         refetch: refetch2,
     } = useQuery(["getAnime2"], () =>
-        axios.get(`https://api.jikan.moe/v4/random/anime?sfw=true`).then((resp) => {
-            if (resp.data) {
-                return resp.data.data;
-            } else {
-                throw new Error("mal_id is undefined in the response.");
-            }
-        })
-    ); 
+        axios
+            .get(`https://api.jikan.moe/v4/random/anime?sfw=true`)
+            .then((resp) => {
+                if (resp.data) {
+                    return resp.data.data;
+                } else {
+                    throw new Error("mal_id is undefined in the response.");
+                }
+            })
+    );
 
     if (isLoading2) {
         return <div>Loading...</div>;
@@ -29,11 +31,9 @@ const Toolbar = () => {
     }
 
     const randomAnime = () => {
-        refetch2()
-        nav(`/${animeData.mal_id}`)
-    }
-
-    console.log(animeData);
+        refetch2();
+        nav(`/${animeData.mal_id}`);
+    };
 
     return (
         <div className="bg-crunchyroll-orange relative flex items-center justify-center rounded">

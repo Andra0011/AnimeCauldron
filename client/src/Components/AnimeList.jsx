@@ -15,13 +15,7 @@ const AnimeList = () => {
                 `https://api.jikan.moe/v4/anime?page=${page}&order_by=title&sfw=true`
             )
             .then((resp) => resp.data)
-    )
-
-    // page=${page}&order_by=title&sfw=true
-
-    const changePage = (newPage) => {
-        setPage(newPage);
-    };
+    );
 
     if (isLoading) {
         return <div>Loading...</div>;
@@ -52,14 +46,20 @@ const AnimeList = () => {
                         className="m-5 flex w-52 flex-col items-center justify-center text-white"
                         onClick={(e) => nav(`/${e.target.id}`)}
                     >
-                        <div id={anime.mal_id} className=" bg-crunchyroll-orange flex h-72 items-center justify-center">
-                            <img
+                        <div
                             id={anime.mal_id}
+                            className=" bg-crunchyroll-orange flex h-72 items-center justify-center"
+                        >
+                            <img
+                                id={anime.mal_id}
                                 src={anime.images.webp.image_url}
                                 alt={anime.title}
                             />
                         </div>
-                        <p id={anime.mal_id} className="relative top-10 text-white">
+                        <p
+                            id={anime.mal_id}
+                            className="relative top-10 text-white"
+                        >
                             {" "}
                             {anime.title}{" "}
                         </p>
