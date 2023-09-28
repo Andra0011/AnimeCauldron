@@ -11,7 +11,7 @@ const Toolbar = () => {
         isError2,
         refetch: refetch2,
     } = useQuery(["getAnime2"], () =>
-        axios.get(`https://api.jikan.moe/v4/random/anime`).then((resp) => {
+        axios.get(`https://api.jikan.moe/v4/random/anime?sfw=true`).then((resp) => {
             if (resp.data) {
                 return resp.data.data;
             } else {
