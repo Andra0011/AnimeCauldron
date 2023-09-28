@@ -24,6 +24,7 @@ export default {
             },
             height: {
                 1000: "1000px",
+                "60vh": "50vh",
                 "40vh": "40vh",
                 "35vh": "35vh",
                 "30vh": "30vh",
@@ -74,6 +75,9 @@ export default {
             screens: {
                 "xl":"1280px",
                 "2xl": "1920px",
+            },
+            textColor: {
+                "crunchyroll-orange": "#F47521",
             }
         },
     },

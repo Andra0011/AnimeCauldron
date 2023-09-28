@@ -4,7 +4,7 @@ import Toolbar from "./Toolbar";
 const MainPage = () => {
     const nav = useNavigate();
     return (
-        <div className="h-screen w-full">
+        <div className="flex h-full w-full flex-col items-center justify-center">
             <Toolbar />
         </div>
     );

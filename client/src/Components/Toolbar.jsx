@@ -1,7 +1,40 @@
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
 
 const Toolbar = () => {
     const nav = useNavigate();
+
+    const {
+        data: animeData,
+        isLoading2,
+        isError2,
+        refetch: refetch2,
+    } = useQuery(["getAnime2"], () =>
+        axios.get(`https://api.jikan.moe/v4/random/anime`).then((resp) => {
+            if (resp.data) {
+                return resp.data.data;
+            } else {
+                throw new Error("mal_id is undefined in the response.");
+            }
+        })
+    ); 
+
+    if (isLoading2) {
+        return <div>Loading...</div>;
+    }
+
+    if (isError2) {
+        return <div>Error fetching anime data</div>;
+    }
+
+    const randomAnime = () => {
+        refetch2()
+        nav(`/${animeData.mal_id}`)
+    }
+
+    console.log(animeData);
+
     return (
         <div className="bg-crunchyroll-orange relative flex items-center justify-center rounded">
             <button className=" ml-6">
@@ -17,7 +50,10 @@ const Toolbar = () => {
             >
                 My profile
             </button>
-            <button className="relative hover:rounded hover:bg-white xl:h-10 xl:w-32 xl:px-3">
+            <button
+                className="relative hover:rounded hover:bg-white xl:h-10 xl:w-32 xl:px-3"
+                onClick={(e) => randomAnime()}
+            >
                 Random
             </button>
             <button
