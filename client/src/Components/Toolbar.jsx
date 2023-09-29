@@ -32,7 +32,13 @@ const Toolbar = () => {
 
     const randomAnime = () => {
         refetch2();
-        nav(`/${animeData.mal_id}`);
+        animeData.genres.map((genre) => {
+            if (genre.name.includes("Hentai")) {
+                randomAnime();
+            } else {
+                nav(`/${animeData.mal_id}`);
+            }
+        });
     };
 
     return (
@@ -52,7 +58,7 @@ const Toolbar = () => {
             </button>
             <button
                 className="relative hover:rounded hover:bg-white xl:h-10 xl:w-32 xl:px-3"
-                onClick={(e) => randomAnime()}
+                onClick={() => randomAnime()}
             >
                 Random
             </button>

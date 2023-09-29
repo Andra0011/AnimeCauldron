@@ -73,7 +73,7 @@ export default {
                 flip: "-1",
             },
             screens: {
-                "xl":"1280px",
+                xl: "1280px",
                 "2xl": "1920px",
             },
             textColor: {
